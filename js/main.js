@@ -8,8 +8,13 @@ window.onload = function () {
             tizen.application.getCurrentApplication().exit();
     });
 
+    	  $("#button").click(function(){
+    	    $.ajax({url:"list.txt",success:function(result){
+    	      $("#ajax").html(result);
+    	    }});
+    	  });
+    
     var $textbox = $("#textbox");
-    console.log($textbox);
     //document.write($textbox);
    $(".contents").on( "click", function() { //.click(function(){
     	

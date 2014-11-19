@@ -10,51 +10,20 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="js/main.js"></script>
     <script src="js/jquery-1.11.1.js"></script>
-    <script>
-    var $textbox = $("#textbox");
-    console.log($textbox);
-    //document.write($textbox);
-   $(".contents").on( "click", function() { //.click(function(){
-    	
-      console.log("test 123");
-    	
-    	/*
-    	setTimeout(function() {
-    		navigator.vibrate(2000);
-    	}, 5000);
-    	if($textbox.innerHTML==="Moi")
-    	{
-    		$textbox.html("Easy");
-    		
-        
-        }
-    	else if($textbox.innerHTML==="Easy")
-    	{
-        	$textbox.html("Hard");
-        
-        }
-    	else if($textbox.innerHTML==="Hard")
-    	{
-        	$textbox.html("Difficult");
-        	
-        
-        }
-        else if($textbox.innerHTML==="Difficult")
-    	{
-        	$textbox.html("Moi");
-        
-        };
-    	console.log("true");*/
-    });
-    console.log("false");
-    </script>
+    
 </head>
 
 <body>
   <div class=contents>
   	<div style='margin:auto;'>
   		<span class=content_text id="textbox">Moi</span>
-  		
+  		<input type="button" id="button" value="nappi">
+  		<span id="ajax" style="color:yellow"></span>
+  		<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
   	</div>
   </div>
 </body>
