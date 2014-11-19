@@ -16,7 +16,7 @@ window.onload = function () {
     
     var $textbox = $("#textbox");
     //document.write($textbox);
-   $(".contents").on( "click", function() { //.click(function(){
+   $("#textbox").on( "click", function() { //.click(function(){
     	
     	setTimeout(function() {
     		navigator.vibrate(2000);
@@ -45,36 +45,21 @@ window.onload = function () {
         };
     });
 
-    // Sample code
-   /* var textbox = document.querySelector('.contents');
-    textbox.addEventListener("click", function(){
-    	box = document.querySelector('#textbox');
-    	
-    	
-    	setTimeout(function() {
-    		navigator.vibrate(2000);
-    	}, 5000);
-    	if(box.innerHTML==="Moi")
-    	{
-    		box.innerHTML =  "Easy";
-        
-        }
-    	else if(box.innerHTML==="Easy")
-    	{
-        	box.innerHTML  = "Hard";
-        
-        }
-    	else if(box.innerHTML==="Hard")
-    	{
-        	box.innerHTML =  "Difficult";
-        
-        }
-        else if(box.innerHTML==="Difficult")
-    	{
-        	box.innerHTML =  "Moi";
-        
-        };
-    	
-    });
-   */ 
+   $("button").click(function(){
+	   $("video").webkitEnterFullScreen();
+   })
+   webapis.motion.getMotionInfo("PEDOMETER", onsuccessCB, onerrorCB);
+   function onsuccessCB(pedometerInfo) 
+   {
+      console.log("Step status: " + pedometerInfo.stepStatus);
+      console.log("Cumulative calories: " + pedometerInfo.cumulativeCalorie);
+      console.log("Cumulative distance: " + pedometerInfo.cumulativeDistance);
+      console.log("Cumulative total step count: " + pedometerInfo.cumulativeTotalStepCount);
+   }
+
+   function onerrorCB(error) 
+   {
+      console.log("Error occurs");
+   }
+		   
 };
